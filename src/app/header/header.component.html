@@ -1,8 +1,36 @@
-<div class="navbar is-dark">
-    <!-- logo -->
+<div class="navbar is-dark">    
+    <!-- always visible -->
     <div class="navbar-brand">
+        <!-- sidebar menu button -->
+        <a class="navbar-item">
+            <span class="icon">
+                <fa-icon [icon]="faBars"></fa-icon>
+            </span>
+        </a>
+        <!-- logo -->
         <a class="navbar-item">
             LOGO
         </a>
     </div>
+
+    <!-- not visible on phones -->
+    <div class="navbar-menu">
+        <!-- left side -->
+        <div class="navbar-start">
+            <div class="field is-grouped">
+                <p class="control is-expanded has-icons-left">
+                    <span class="icon is-right"><fa-icon [icon]="faSearch"></fa-icon></span>
+                    <input class="input has-background-grey-dark" type="search" placeholder="Search works"/>                
+                </p>
+            </div>
+        </div>       
+        <!-- right side -->
+        <div class="navbar-end">
+            <div class="navbar-item has-dropdown is-hoverable">                    
+                <a class="navbar-link">
+                    <fa-icon [icon]="faGrin"></fa-icon>
+                </a>           
+            </div>
+        </div> 
+    </div>    
 </div>
