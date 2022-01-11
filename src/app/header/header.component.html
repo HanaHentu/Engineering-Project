@@ -1,8 +1,9 @@
-<div class="navbar is-dark">    
+
+<nav class="navbar is-dark" role="navigation">    
     <!-- always visible -->
     <div class="navbar-brand">
         <!-- sidebar menu button -->
-        <a class="navbar-item">
+        <a class="navbar-item" role="button">
             <span class="icon">
                 <fa-icon [icon]="faBars"></fa-icon>
             </span>
@@ -15,22 +16,53 @@
 
     <!-- not visible on phones -->
     <div class="navbar-menu">
-        <!-- left side -->
-        <div class="navbar-start">
-            <div class="field is-grouped">
-                <p class="control is-expanded has-icons-left">
-                    <span class="icon is-right"><fa-icon [icon]="faSearch"></fa-icon></span>
-                    <input class="input has-background-grey-dark" type="search" placeholder="Search works"/>                
-                </p>
-            </div>
-        </div>       
         <!-- right side -->
         <div class="navbar-end">
+            <!-- searchbox -->
+            <div class="navbar-item">
+                <div class="field is-grouped">
+                    <p class="control is-expanded has-icons-left">
+                        <span class="icon is-right"><fa-icon [icon]="faSearch"></fa-icon></span>
+                        <input class="input has-background-grey-dark" type="search" placeholder="Search works"/>                
+                    </p>
+                </div>
+            </div>
+
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                  Post your work
+                </a>
+        
+                <div class="navbar-dropdown">
+                  <a class="navbar-item">
+                    Illustration
+                  </a>
+                  <a class="navbar-item">
+                    Photo
+                  </a>
+                </div>
+              </div>
+
+            <!-- messages -->
+            <a class="navbar-item" role="button">
+                <span class="icon">
+                    <fa-icon [icon]="faEnvelope"></fa-icon>
+                </span>
+            </a>
+
+            <!-- notifications -->
+            <a class="navbar-item" role="button">
+                <span class="icon">
+                    <fa-icon [icon]="faBell"></fa-icon>
+                </span>
+            </a>
+
+            <!-- profile -->
             <div class="navbar-item has-dropdown is-hoverable">                    
                 <a class="navbar-link">
                     <fa-icon [icon]="faGrin"></fa-icon>
                 </a>           
             </div>
         </div> 
-    </div>    
-</div>
+    </div>
+</nav>
