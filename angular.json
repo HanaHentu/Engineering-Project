@@ -33,8 +33,7 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "./node_modules/bulma/css/bulma.css",
+            "styles": [ 
               "src/styles.scss"
             ],
             "scripts": []
