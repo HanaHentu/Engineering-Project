@@ -2,11 +2,50 @@
     <div class="hero-body">
         <div class="container has-text-centered">
             <p class="title is-1">
-                My Home Page!
+                ImageX!
             </p>
-            <button class="button subtitle is-outlined is-rounded is-dark" routerLink="/main">
-                Enter
-            </button>
+            <div class="columns is-centered">
+                <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+                    <form action="" class="box">
+                        <div class="field">
+                            <label for="" class="label">Email</label>
+                            <div class="control has-icons-left">
+                                <input type="email" placeholder="E-mail address" class="input" required>
+                                <span class="icon is-small is-left">
+                                    <fa-icon [icon]="faEnvelope"></fa-icon>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="" class="label">Password</label>
+                            <div class="control has-icons-left">
+                                <input type="password" placeholder="password" class="input" required>
+                                <span class="icon is-small is-left">
+                                    <fa-icon [icon]="faLock"></fa-icon>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="" class="checkbox">
+                                <input type="checkbox">
+                                Remember me
+                            </label>
+                        </div>
+                        <div class="field is-grouped is-grouped-centered">
+                            <p class="control">
+                                <button class="button is-warning is-outlined" routerLink="/main">
+                                    Login
+                                </button>
+                              </p>
+                              <p class="control">
+                                <button class="button is-warning is-outlined">
+                                    Create account
+                                </button>
+                              </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </section>
