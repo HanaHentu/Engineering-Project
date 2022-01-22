@@ -1,0 +1,23 @@
+.hero {
+    background-image: url('/assets/images/home.png') !important;
+    background-size: cover;
+    background-position: center;
+}
+
+.box {
+    background: rgba(41, 41, 41, 0.75);
+    border: solid 2px rgb(250, 192, 56);
+    border-radius: 10px;
+}
+
+.field label {
+    color: rgb(250, 192, 56);
+}
+
+::placeholder {
+    color: grey;
+}
+
+.title {
+    text-shadow: -1px -1px 0 rgb(250, 192, 56);
+}

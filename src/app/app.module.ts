@@ -6,16 +6,18 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { HomeComponent } from './home/home.component';
 import { MainComponent } from './main/main.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent,
-    MainComponent
+    MainComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
