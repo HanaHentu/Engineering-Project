@@ -1,0 +1,54 @@
+<section class="hero is-primary is-bold is-fullheight">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <p class="title is-1 has-text-dark">
+                Registration
+            </p>
+            <div class="columns is-centered">
+                <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+                    <form action="" class="box">
+                        <div class="field">
+                            <label for="" class="label">Email</label>
+                            <div class="control has-icons-left">
+                                <input type="email" placeholder="E-mail address" class="input" required>
+                                <span class="icon is-small is-left">
+                                    <fa-icon [icon]="faEnvelope"></fa-icon>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="" class="label">Nickname</label>                            
+                            <div class="control has-icons-left">
+                                <input id="name" type="text" placeholder="Nickname" class="input" required>
+                                <span class="icon is-small is-left">
+                                    <fa-icon [icon]="faUserCircle"></fa-icon>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="" class="label">Password</label>
+                            <div class="control has-icons-left">
+                                <input type="password" placeholder="password" class="input" required>
+                                <span class="icon is-small is-left">
+                                    <fa-icon [icon]="faLock"></fa-icon>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="field is-grouped is-grouped-centered">
+                            <p class="control">
+                                <button class="button is-warning is-outlined" >
+                                    Register
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button class="button is-warning is-outlined" routerLink="/">
+                                    Back
+                                </button>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
