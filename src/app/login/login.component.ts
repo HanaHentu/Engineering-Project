@@ -9,6 +9,10 @@ import { NavbarService } from '../navbar.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  email: string = "";
+  name: string = "";
+  password: string = "";
+
   status: string = "login";
   visible: boolean = false;
 
@@ -23,6 +27,9 @@ export class LoginComponent implements OnInit {
 
   onRegisterPress() {
     this.authService.setStatus = "register";
+  }
+
+  submitForm(){
   }
 
 }

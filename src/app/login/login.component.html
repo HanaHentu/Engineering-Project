@@ -4,36 +4,44 @@
             <p class="title is-1 has-text-dark">
                 Login
             </p>
+
+            <!-- FORM -->
             <div class="columns is-centered">
                 <div class="column is-5-tablet is-4-desktop is-3-widescreen">
-                    <form action="" class="box">
+                    <form (ngSubmit)="submitForm()" #loginForm="ngForm" class="box">
                         <div class="field">
-                            <label for="" class="label">Email</label>
+                            <label class="label">Email</label>
                             <div class="control has-icons-left">
-                                <input type="email" placeholder="E-mail address" class="input" required>
+                                <input type="email" name="email" placeholder="E-mail address" class="input" [(ngModel)]="email" #emailInput="ngModel" required email>
                                 <span class="icon is-small is-left">
                                     <fa-icon [icon]="faEnvelope"></fa-icon>
                                 </span>
                             </div>
+                            <div class="help is-warning has-text-left" *ngIf="emailInput.invalid && emailInput.touched && emailInput.hasError('email')">Please enter a valid email address</div>
+                            <div class="help is-warning has-text-left" *ngIf="emailInput.invalid && emailInput.touched && emailInput.hasError('required')">Email is required</div>
                         </div>
                         <div class="field">
                             <label for="" class="label">Password</label>
                             <div class="control has-icons-left">
-                                <input type="password" placeholder="password" class="input" required>
+                                <input type="password" name="password" placeholder="password" class="input" [(ngModel)]="password" #passwordInput="ngModel" required>
                                 <span class="icon is-small is-left">
                                     <fa-icon [icon]="faLock"></fa-icon>
                                 </span>
                             </div>
+                            <div class="help is-warning has-text-left" *ngIf="passwordInput.invalid && passwordInput.touched">Enter your password</div>
                         </div>
                         <div class="field">
                             <label class="checkbox">
                                 <input type="checkbox">
                                 Remember me
                             </label>
-                        </div>
-                        <div class="field is-grouped is-grouped-centered">
+                        </div>                        
+                        <div class="field is-grouped is-grouped-centered">                            
                             <p class="control">
-                                <button class="button is-warning is-outlined" routerLink="/main">
+                                <button *ngIf="loginForm.invalid" type="submit" class="button is-warning is-outlined">
+                                    Login
+                                </button>
+                                <button *ngIf="loginForm.valid" type="submit" class="button is-warning is-outlined" routerLink="/main">
                                     Login
                                 </button>
                             </p>
@@ -46,6 +54,8 @@
                     </form>
                 </div>
             </div>
+            <!-- FORM -->
+
         </div>
     </div>
 </section>

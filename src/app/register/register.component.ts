@@ -8,6 +8,9 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  email: string = "";
+  name: string = "";
+  password: string = "";
 
   constructor( public authService:AuthService ) { }
 
@@ -22,5 +25,7 @@ export class RegisterComponent implements OnInit {
     this.authService.setStatus = "login";
   }
 
+  submitForm(){
+  }
 
 }
