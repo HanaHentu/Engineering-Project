@@ -8,7 +8,7 @@
             <!-- FORM -->
             <div class="columns is-centered">
                 <div class="column is-5-tablet is-4-desktop is-3-widescreen">
-                    <form (ngSubmit)="submitForm()" #loginForm="ngForm" class="box">
+                    <form (ngSubmit)="submitForm()" #registerForm="ngForm" class="box">
                         <div class="field">
                             <label class="label">Email</label>
                             <div class="control has-icons-left">
@@ -42,7 +42,10 @@
                         </div>
                         <div class="field is-grouped is-grouped-centered">
                             <p class="control">
-                                <button type="submit" class="button is-warning is-outlined" routerLink="/">
+                                <button *ngIf="registerForm.invalid" type="submit" class="button is-warning is-outlined">
+                                    Register
+                                </button>
+                                <button *ngIf="registerForm.valid" type="submit" class="button is-warning is-outlined" routerLink="/">
                                     Register
                                 </button>
                             </p>

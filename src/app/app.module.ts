@@ -10,6 +10,8 @@ import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
+import { UserService } from './user.service';
+import { LoggedInUserGuard } from './logged-in-user.guard';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,10 @@ import { FormsModule } from '@angular/forms';
     FontAwesomeModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    UserService,
+    LoggedInUserGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
