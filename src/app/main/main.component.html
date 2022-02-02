@@ -1,44 +1,50 @@
 <section class="hero is-bold is-fullheight-with-navbar">
-    <section class="container mt-6 p-auto">
-    <div class="columns features">
-        <div class="column is-3">
-            <div class="card is-shady">
-                <div class="card-image">
-                    <figure class="image is-4by3">
-                        <img src="https://i.pximg.net/img-master/img/2021/12/26/20/19/52/95046057_p0_master1200.jpg" alt="Placeholder image" class="modal-button"
-                            data-target="modal-image2">
-                    </figure>
-                </div>
-                <div class="card-content">
-                    <div class="content">
-                        <h4>Click on image above</h4>
-                        <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec. Integer
-                            enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac ut consequat
-                            semper viverra nam.</p>
-                        <span class="button is-link modal-button" data-target="modal-image2">Image modal</span>
+    <div class="container is-fluid">
+        <div class="section">
+            <div class="columns is-multiline is-centered">
+                <div class="column is-one-fifth">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-square">
+                                <img src="https://wallpapersmug.com/download/1024x768/cd6421/beautiful-red-eyes-and-white-hair-anime-girl.jpg" (click)="clickEvent()" alt="kiss">                                
+                            </figure>
+                            <div class="card-header-title is-centered">Yuri kiss</div>
+                        </div>                        
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="column is-3">
-            <div class="card is-shady">
-                <div class="card-image">
-                    <figure class="image is-4by3">
-                        <img src="https://source.unsplash.com/RWnpyGtY1aU" alt="Placeholder image" class="modal-button"
-                            data-target="modal-image2">
-                    </figure>
+                <div class="column is-one-fifth">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-square">
+                                <img src="https://wallpapersmug.com/download/1440x2880/a18f20/white-hair-anime-girl-minimal.jpg" alt="kiss">
+                            </figure>
+                            <div class="card-header-title is-centered">Yuri kiss</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <div class="content">
-                        <h4>Click on image above</h4>
-                        <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec. Integer
-                            enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac ut consequat
-                            semper viverra nam.</p>
-                        <span class="button is-link modal-button" data-target="modal-image2">Image modal</span>
+                <div class="column is-one-fifth">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-square js-modal-trigger" data-target="modal-js-example">
+                                <img src="https://www.gojinshi.com/wp-content/uploads/2019/09/Anime-Girls-With-White-Hair-28.jpg" alt="kiss">
+                            </figure>
+                            <div class="card-header-title is-centered">Yuri kiss</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </section>
+                       
+            <div class="modal"  
+            [ngClass]="status ? 'is-active' : ''">
+                <div class="modal-background" (click)="clickEvent()"></div>
+                <div class="modal-content">
+                    <img src="https://wallpapersmug.com/download/1024x768/cd6421/beautiful-red-eyes-and-white-hair-anime-girl.jpg" alt="kiss">
+                </div>
+            </div>
 </section>
+
+
+
+<script src="main.component.js"></script>

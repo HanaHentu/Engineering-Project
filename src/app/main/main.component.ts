@@ -10,7 +10,10 @@ export class MainComponent implements OnInit {
 
   constructor( public navbarService: NavbarService ) {}
 
-  
+  status: boolean = false;
+  clickEvent() {
+    this.status = !this.status;
+  }
 
   ngOnInit() {
     this.navbarService.show();
