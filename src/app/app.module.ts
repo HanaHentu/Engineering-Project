@@ -12,6 +12,8 @@ import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
 import { UserService } from './user.service';
 import { LoggedInUserGuard } from './logged-in-user.guard';
+import { FirebaseTSApp } from 'firebasets/firebasetsApp/firebaseTSApp';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -34,4 +36,8 @@ import { LoggedInUserGuard } from './logged-in-user.guard';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    FirebaseTSApp.init(environment.firebaseConfig);
+  }
+}

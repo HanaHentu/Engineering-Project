@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faEnvelope, faLock, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { FirebaseTSFirestore } from 'firebasets/firebasetsFirestore/firebaseTSFirestore';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -12,7 +13,11 @@ export class RegisterComponent implements OnInit {
   name: string = "";
   password: string = "";
 
-  constructor( public authService:AuthService ) { }
+  private firestore: FirebaseTSFirestore;
+
+  constructor( public authService:AuthService ) {
+    this.firestore = new FirebaseTSFirestore;    
+  }
 
   ngOnInit(): void {
   }
@@ -23,6 +28,23 @@ export class RegisterComponent implements OnInit {
 
   onRegisterPress() {
     this.authService.setStatus = "login";
+    this.firestore.create(
+      {
+        path: ["users"],
+        data: {
+          email: this.email,
+          name: this.name,
+          password: this.password,
+          role: false
+        },
+        onComplete: (result) => {
+          alert("Registered successfully");
+        },
+        onFail: (err) => {
+          alert("Failed to register" + err);
+        }
+      }
+    )
   }
 
   submitForm(){

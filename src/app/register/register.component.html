@@ -45,7 +45,7 @@
                                 <button *ngIf="registerForm.invalid" type="submit" class="button is-warning is-outlined">
                                     Register
                                 </button>
-                                <button *ngIf="registerForm.valid" type="submit" class="button is-warning is-outlined" routerLink="/">
+                                <button *ngIf="registerForm.valid" type="submit" class="button is-warning is-outlined" routerLink="/" (click)="onRegisterPress()">
                                     Register
                                 </button>
                             </p>
