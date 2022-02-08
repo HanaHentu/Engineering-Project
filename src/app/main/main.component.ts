@@ -39,9 +39,9 @@ export class MainComponent implements OnInit {
       onFail: err => {
 
       }
-    });
+    }
+    );
   }
-
 }
 
 export interface IMAGES {

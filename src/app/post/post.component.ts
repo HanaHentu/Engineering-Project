@@ -13,13 +13,11 @@ export class PostComponent implements OnInit {
   @Output()
   onClose = new EventEmitter();
 
-  private firestore: FirebaseTSFirestore;
+  firestore = new FirebaseTSFirestore;
   storage = new FirebaseTSStorage();
   selectedImageFile: File | undefined;
 
-  constructor() { 
-    this.firestore = new FirebaseTSFirestore;    
-  }
+  constructor() { }
 
   showModal: boolean = false;
   title: string = "";
@@ -30,23 +28,6 @@ export class PostComponent implements OnInit {
   }
 
   postImage(){
-    this.firestore.create(
-      {
-        path: ["images"],
-        data: {
-          tag: this.tags,
-          title: this.title,          
-          url: this.resume,
-          user: "LnIslB0J6VxoA90lJaLt"
-        },
-        onComplete: (result) => {
-          alert("Uploaded image successfully");
-        },
-        onFail: (err) => {
-          alert("Failed to upload image" + err);
-        }
-      }
-    );
     let imageId = this.firestore.genDocId();
     this.storage.upload(
       {
@@ -58,12 +39,12 @@ export class PostComponent implements OnInit {
         onComplete: (downloadUrl) => {
           this.firestore.create(
             {
-              path: ["Images", imageId],
+              path: ["images", imageId],
               data: {
-                tags: this.tags,
+                tag: this.tags,
                 title: this.title,
-                imageUrl: downloadUrl,
-                timestamp: FirebaseTSApp.getFirestoreTimestamp()
+                url: downloadUrl,
+                user: "LnIslB0J6VxoA90lJaLt"
               },
               onComplete: (docId) => {
                 this.cancel();
