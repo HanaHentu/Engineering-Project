@@ -14,6 +14,8 @@ import { UserService } from './user.service';
 import { LoggedInUserGuard } from './logged-in-user.guard';
 import { FirebaseTSApp } from 'firebasets/firebasetsApp/firebaseTSApp';
 import { environment } from 'src/environments/environment';
+import { PostComponent } from './post/post.component';
+import { ImagecardComponent } from './imagecard/imagecard.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { environment } from 'src/environments/environment';
     FooterComponent,
     MainComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PostComponent,
+    ImagecardComponent
   ],
   imports: [
     BrowserModule,

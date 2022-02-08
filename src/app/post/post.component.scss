@@ -1,0 +1,18 @@
+.modal-card {
+    background-color: rgba(41, 41, 41, 0.75);
+    border: solid 2px rgb(250, 192, 56);
+    border-radius: 10px;
+}
+
+::placeholder {
+    color: grey;
+}
+
+.field label {
+    color: rgb(250, 192, 56);
+}
+
+.modal-card-title {
+    color: rgb(250, 192, 56);
+    font-size: xx-large;
+}

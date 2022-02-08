@@ -9,31 +9,37 @@ import { FirebaseTSFirestore } from 'firebasets/firebasetsFirestore/firebaseTSFi
 })
 export class MainComponent implements OnInit {
 
-  private firestore: FirebaseTSFirestore;
+  firestore = new FirebaseTSFirestore();
   status: boolean = false;
-  imagesRef: IMAGES | undefined;
+  imagesRef: IMAGES [] = [];
 
-  constructor(public navbarService: NavbarService) {
-    this.firestore = new FirebaseTSFirestore();
-    this.firestore.getDocument(
-      {
-        path: ["images", "1"],
-        onComplete: (result) => {
-          this.imagesRef = <IMAGES>result.data();
-        },
-        onFail: (err) => {
-
-        }
-      }
-    );
-  }
+  constructor(public navbarService: NavbarService) { }
 
   clickEvent() {
     this.status = !this.status;
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.navbarService.show();
+    this.getImageCards();
+  }
+
+  getImageCards(){
+    this.firestore.getCollection({
+      path: ["images"],
+      where: [],
+      onComplete: (result) => {
+        result.docs.forEach(
+          doc => {
+            let imageCard = <IMAGES>doc.data();
+            this.imagesRef.push(imageCard);
+          }
+        );
+      },
+      onFail: err => {
+
+      }
+    });
   }
 
 }
@@ -42,5 +48,5 @@ export interface IMAGES {
   tag: string;
   title: string;
   url: string;
-  user_id: number;
+  user: string;
 }

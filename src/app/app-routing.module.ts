@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'main',
     component: MainComponent,
     canActivate: [LoggedInUserGuard]
+  },
+  {
+    path: "**",
+    component: LoginComponent
   }
 ];
 

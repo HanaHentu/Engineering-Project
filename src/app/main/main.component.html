@@ -1,50 +1,11 @@
 <section class="hero is-bold is-fullheight-with-navbar">
     <div class="container is-fluid">
         <div class="section">
-            <div class="columns is-multiline is-centered">
-                <div class="column is-one-fifth">
-                    <div class="card">
-                        <div class="card-image">
-                            <figure class="image is-square">
-                                <img src="https://wallpapersmug.com/download/1024x768/cd6421/beautiful-red-eyes-and-white-hair-anime-girl.jpg" (click)="clickEvent()" alt="kiss">                                
-                            </figure>
-                            <div class="card-header-title is-centered">Yuri kiss</div>
-                        </div>                        
-                    </div>
-                </div>
-                <div class="column is-one-fifth">
-                    <div class="card">
-                        <div class="card-image">
-                            <figure class="image is-square">
-                                <img src="https://wallpapersmug.com/download/1440x2880/a18f20/white-hair-anime-girl-minimal.jpg" alt="kiss">
-                            </figure>
-                            <div class="card-header-title is-centered">Yuri kiss</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-one-fifth">
-                    <div class="card">
-                        <div class="card-image">
-                            <figure class="image is-square js-modal-trigger" data-target="modal-js-example">
-                                <img src="https://www.gojinshi.com/wp-content/uploads/2019/09/Anime-Girls-With-White-Hair-28.jpg" alt="kiss">
-                            </figure>
-                            <div class="card-header-title is-centered">Yuri kiss</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="columns is-multiline is-centered">      
+                <div class="column is-one-fifth" *ngFor="let imageCard of imagesRef" >        
+                <app-imagecard [images]="imageCard"></app-imagecard>
+                </div>                  
             </div>
         </div>
     </div>
-                       
-            <div class="modal"  
-            [ngClass]="status ? 'is-active' : ''">
-                <div class="modal-background" (click)="clickEvent()"></div>
-                <div class="modal-content">
-                    <img src="https://wallpapersmug.com/download/1024x768/cd6421/beautiful-red-eyes-and-white-hair-anime-girl.jpg" alt="kiss">
-                </div>
-            </div>
 </section>
-
-
-
-<script src="main.component.js"></script>

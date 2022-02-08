@@ -1,0 +1,17 @@
+.card {
+    border-radius: 15px;
+}
+
+.image img {
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.card-header-title {
+    background-color: rgb(31, 31, 31);
+    color: white;
+}
+
+figcaption {
+    top: auto;
+}

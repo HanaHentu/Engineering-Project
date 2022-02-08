@@ -28,20 +28,9 @@
                 </div>
             </div>
 
-            <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">
-                  Post your work
-                </a>
-        
-                <div class="navbar-dropdown">
-                  <a class="navbar-item">
-                    Illustration
-                  </a>
-                  <a class="navbar-item">
-                    Photo
-                  </a>
-                </div>
-              </div>
+            <a class="navbar-item" role="button" (click)="onClick()">
+                Post your work
+            </a>
 
             <!-- messages -->
             <a class="navbar-item" role="button">
@@ -66,3 +55,6 @@
         </div> 
     </div>
 </nav>
+
+<app-post *ngIf="showModal" (onClose)="showModal=false"></app-post>
+

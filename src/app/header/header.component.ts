@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faBars, faSearch, faGrin, faBell, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { NavbarService } from '../navbar.service';
+import { PostComponent } from '../post/post.component';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,8 @@ import { NavbarService } from '../navbar.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  visible: boolean = false;
+  visible: boolean = false;  
+  showModal: boolean = false;
 
   constructor( public navbarService: NavbarService ) {}
 
@@ -18,6 +20,10 @@ export class HeaderComponent {
 
   ngOnInit(): void {
     this.getVisible();
+  }  
+  
+  onClick(){
+    this.showModal = true;
   }
 
   faEnvelope = faEnvelope;
